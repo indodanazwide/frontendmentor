@@ -1,0 +1,31 @@
+:root {
+    --font-family: "Red Hat Text", serif;
+    --font-size: 1rem;
+    --font-weight-regular: 400;
+    --font-weight-semi-bold: 600;
+    --font-weight-bold: 700;
+
+    --red: hsl(14, 86%, 42%);
+    --green: hsl(159, 69%, 38%);
+
+    --white: hsl(20, 50%, 98%);
+    --light-pink: hsl(13, 31%, 94%);
+    --pink:  hsl(14, 25%, 72%);
+    --brownish-pink: hsl(7, 20%, 60%);
+    --brown: hsl(12, 20%, 44%);
+    --dark-brown: hsl(14, 65%, 9%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight-regular);
+    color: var(--dark-brown);
+    background-color: var(--light-pink);
+}
