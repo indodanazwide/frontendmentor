@@ -6,6 +6,7 @@
     --font-weight-bold: 700;
 
     --red: hsl(14, 86%, 42%);
+    --light-red: hsl(0, 100%, 50%);
     --green: hsl(159, 69%, 38%);
 
     --white: hsl(20, 50%, 98%);
@@ -28,4 +29,143 @@ body {
     font-weight: var(--font-weight-regular);
     color: var(--dark-brown);
     background-color: var(--light-pink);
+}
+
+.btn-primary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    padding: .5rem 1.5rem;
+    border: 1px solid var(--brown);
+    border-radius: 3.5rem;
+    background-color: var(--light-pink);
+    cursor: pointer;
+    transition: .2s;
+}
+
+.btn-primary:hover {
+    color: var(--dark-brown);
+    border: 1.2px solid var(--dark-brown);
+}
+
+.btn-primary:active {
+    transform: scale(.92);
+    background-color: var(--light-pink);
+}
+
+.btn-secondary, .btn-cart  {
+    text-align: center;
+    border: transparent;
+    border-radius: 3.5rem;
+    background-color: var(--light-red);
+    color: var(--white);
+    padding: .5rem 1.5rem;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.btn-secondary:hover, .btn-cart:hover {
+    background-color: var(--red);
+}
+
+.btn-secondary:active, .btn-cart:active {
+    transform: scale(.92);
+    background-color: var(--light-red);
+}
+
+.btn-cart {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: .5rem;
+}
+
+.dessert-img {
+    border-radius: 1rem;
+    margin-bottom: 2.5rem;
+    max-width: 100%;
+}
+
+h1, h2 {
+    margin: 0 0 2rem;
+}
+
+li {
+    position: relative;
+    list-style: none;
+}
+
+.category {
+    color: var(--brown);
+}
+
+.name , .total, .num  {
+    font-weight: var(--font-weight-semi-bold);
+}
+
+.price, .total {
+    color: var(--brown);
+}
+
+.num {
+    color: var(--red);
+}
+
+#cart {
+    border-radius: 1rem;
+    background-color: var(--white);
+    min-width: 34%;
+    min-height: 50vh;
+    max-height: fit-content;
+    padding: 1rem 2rem;
+}
+
+#cart h2 {
+    color: var(--red);
+}
+
+.no-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.no-items img {
+    margin-bottom: .5rem;
+}
+
+.with-items p {
+    margin-block: .2rem;
+}
+
+div {
+    display: flex;
+    gap: .75rem;
+}
+
+hr {
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 1440px) {
+    main {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 6rem;
+        min-width: 100%;
+    }
+
+    .desserts {
+        padding: .5rem 1rem;
+        max-width: 65%;
+    }
+
+    .desserts #items {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    
 }

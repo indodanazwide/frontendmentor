@@ -90,3 +90,25 @@ fetchData()
 
 A programming interface for *web documents*, representing the structure and content od **HTML/XML** documents as a *tree of objects*.
 *Each part of the document is represented as a node in this tree. This hierarchical model allows programming languages to access and manipulate the document's structur, style and content **dynamically***.
+
+---
+
+### Dynamic and static rendering on DOM 
+
+On the cart section, there were items I wanted them to be static and some dynamic, `constant variable` and `.map()` **(.map() is used to loop through an array and generate HTML for each item)**.
+
++   Example:
+
+```javascript
+
+const staticHTML = `
+    <h2>Static heading</h2>
+    ${
+        array.map(item => `
+            <p>Dynamic content</p>
+        `).join('')
+    }
+    <button>Static button</button>
+`
+
+```
