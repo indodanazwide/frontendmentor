@@ -8,7 +8,7 @@ This repository contains my solutions to various challenges from  [Frontend Ment
 
 [](https://github.com/bukekanxumalobukekanxumalo-ux/frontend-mentor-projects#-projects)
 
--   Will be posted soon...
+-   Currently working on [Product List](https://github.com/indodanazwide/frontendmentor/tree/main/product-list)
 
 ## 🚀 Technologies Used
 
