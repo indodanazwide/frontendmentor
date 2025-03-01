@@ -23,6 +23,17 @@ async function fetchAndDisplayData() {
     }
 }
 
+let orderPrice = []
+
+function sum(orderItems) {
+    let sum = 0
+    for (let i of orderItems) {
+        sum += i
+    }
+
+    return sum
+}
+
 async function addToCartAndDisplay(name) {
     try {
         let res = await fetch('/data.json')
@@ -36,17 +47,19 @@ async function addToCartAndDisplay(name) {
             if (existingCartItem) {
                 existingCartItem.quantity += 1
                 existingCartItem.total += existingCartItem.price
+                orderPrice.push(existingCartItem.price)
             } else {
                 cart.push({
                     name: dessertObject.name,
                     price: dessertObject.price,
                     quantity: 1,
-                    total: dessertObject.price
+                    total: dessertObject.price,
                 })
-            }
-            
-        }
 
+                orderPrice.push(dessertObject.price)
+            }
+        }
+        
         console.log(cart)
 
         const cartUpdate = `
@@ -54,7 +67,10 @@ async function addToCartAndDisplay(name) {
             ${
                 cart.map(item => `
                     <article class="with-items">
-                        <p class="name">${item.name}</p> 
+                        <div class="top">
+                            <p class="name">${item.name}</p> 
+                            <img src="./assets/images/icon-remove-item.svg" onClick="removeItemFromcart(${item.name})" />
+                        </div>
 
                         <div>
                             <p class="num">x${item.quantity}</p>
@@ -67,14 +83,27 @@ async function addToCartAndDisplay(name) {
             }
             <article class="order">
                 <p>Order Total</p>
-                <h1>$</h1>
+                <h1>$${sum(orderPrice)}</h1>
             </article>
+
+            <aside>
+                <img src="./assets/images/icon-carbon-neutral.svg" />
+                <p>This is a <strong>carbon-neutral</strong> delivery</p>
+            </aside>
 
             <button class="btn-secondary">Confirm Order</button>
         `
         document.getElementById('cart').innerHTML = cartUpdate
     } catch (error) {
         console.error('Error adding to cart:', error)
+    }
+}
+
+ function removeItemFromcart(item) {
+    try {
+        console.log('List')
+    } catch (error) {
+        console.error(error)
     }
 }
 

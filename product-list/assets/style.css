@@ -144,6 +144,35 @@ div {
     gap: .75rem;
 }
 
+.top {
+    justify-content: space-between;
+
+}
+
+.top img {
+    border: 1px solid var(--brownish-pink);
+    border-radius: 100%;
+    width: 5%;
+    height: 5%;
+    padding: .075rem;
+    cursor: pointer;
+}
+
+.order {
+    display: flex;
+    justify-content: space-between;
+}
+
+aside {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--light-pink);
+    text-align: center;
+    margin: 1rem 10% 2rem;
+    padding: .5rem;
+    font-size: .75rem;
+}
+
 hr {
     margin-bottom: 2rem;
 }
